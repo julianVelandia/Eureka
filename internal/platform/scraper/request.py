@@ -10,16 +10,14 @@ PARSER = "html.parser"
 
 
 def single_request(path: Path):
-    response = Response()
+    response = Response("")
 
-    url = requests.get(Path.base_url)
+    url = requests.get(path.base_url)
     soup = BeautifulSoup(url.content, PARSER)
 
-    class_names_title = format_class_names(path.title_class_name)
-    response.title = soup.find(path.title_tag, {CLASS: class_names_title}).text
+    class_names_text = format_class_names(path.text_class_name)
+    response.text = soup.find(path.text_tag, {CLASS: class_names_text}).text
 
-    # TODO para el texto o contenido
-    # TODO hacer esa parte modular
     return response
 
 

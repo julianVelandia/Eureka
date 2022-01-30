@@ -1,7 +1,5 @@
 class Response:
-    def __init__(self, title, text):
-        self.title = title
+    def __init__(self, text):
         self.text = text
 
-    title: str
-    text: [str]
+    text: str
