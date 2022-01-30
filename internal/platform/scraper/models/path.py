@@ -1,18 +1,13 @@
 class Path:
-    def __init__(self, base_url, title, text, sub_path):
+    def __init__(self, base_url, title, text):
         self.base_url = base_url
         self.title = title
         self.text = text
-        self.sub_path = sub_path
 
     base_url: str
-    title: str
-    text: [str]
-    sub_path: [str]
+    title_tag: str
+    title_class_name: [str]
+    text_tag: str
 
 
-class SubPath:
-    url: str
-    title: str
-    text: [str]
 
