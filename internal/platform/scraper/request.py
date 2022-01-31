@@ -3,14 +3,14 @@ import requests
 import re
 from internal.platform.scraper.models.path import Path
 
-from internal.platform.scraper.models.response import Response
+from internal.platform.scraper.models.information import Information
 
 CLASS = "class"
 PARSER = "html.parser"
 
 
 def single_request(path: Path):
-    response = Response("")
+    response = Information("")
 
     # TODO try and catch
 

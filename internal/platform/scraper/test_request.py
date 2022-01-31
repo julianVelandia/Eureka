@@ -1,13 +1,13 @@
 import pytest
 from internal.platform.scraper.request import format_class_names, single_request, url_is_valid
 from internal.platform.scraper.models.path import Path
-from internal.platform.scraper.models.response import Response
+from internal.platform.scraper.models.information import Information
 
 
 @pytest.mark.parametrize(
     "input_a, expected",
     [
-        (Path("https://fastapi.tiangolo.com/", "span", ["md-ellipsis"]), Response("\n            FastAPI\n          "))
+        (Path("https://fastapi.tiangolo.com/", "span", ["md-ellipsis"]), Information("\n            FastAPI\n          "))
     ]
 )
 def test_single_request_when_ok_should_return_text(input_a, expected):
