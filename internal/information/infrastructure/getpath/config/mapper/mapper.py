@@ -1,6 +1,6 @@
 from internal.information.core.query.get_config import QueryConfig
-from internal.information.infrastructure.pathconfig.model.query import QueryModel
-from internal.information.infrastructure.pathconfig.process import MapperInterface
+from internal.information.infrastructure.getpath.config.model.query import QueryModel
+from internal.information.infrastructure.getpath.config.process import MapperInterface
 
 
 class Mapper(MapperInterface):
