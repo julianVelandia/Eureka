@@ -2,13 +2,13 @@ from internal.information.core.query.get_config import QueryConfig
 from internal.information.infrastructure.pathconfig.model.query import QueryModel
 
 
-class Mapper:
+class MapperInterface:
     def model_to_domain(self, query_model: QueryModel) -> QueryConfig:
         pass
 
 
 class ProcessPathConfig:
-    mapper: Mapper
+    mapper: MapperInterface
 
     def get(self, query_model: QueryModel) -> QueryConfig:
-        return Mapper.model_to_domain(query_model)
+        return MapperInterface.model_to_domain(query_model)
