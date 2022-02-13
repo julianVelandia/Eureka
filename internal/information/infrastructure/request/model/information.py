@@ -1,0 +1,2 @@
+class InformationModel:
+    text: str

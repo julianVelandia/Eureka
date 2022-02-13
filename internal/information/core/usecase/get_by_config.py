@@ -8,19 +8,19 @@ class GetConfigService:
         pass
 
 
-class RequestService:
+class GetInformationService:
     def get_information(self, path: Path) -> Information:
         pass
 
 
 class GetByConfig:
     get_config_service: GetConfigService
-    requests_service: RequestService
+    get_information_service: GetInformationService
 
     def execute(self, query: GetConfig) -> Information:
         path = GetConfigService.get_path(query)
         # TODO Manejo de errores
 
-        information = RequestService.get_information(path)
+        information = GetInformationService.get_information(path)
 
         return information
