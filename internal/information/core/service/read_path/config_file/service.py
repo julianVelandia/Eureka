@@ -3,13 +3,13 @@ from internal.information.core.query.get_config import GetConfig
 from internal.information.core.usecase.get_by_config import GetConfigService
 
 
-class GetPath:
+class GetPathService:
     def get(self, query: GetConfig) -> Path:
         pass
 
 
 class Service(GetConfigService):
-    path_config = GetPath
+    path_config = GetPathService
 
     def get_path(self, query: GetConfig) -> Path:
-        return GetPath.get(query)
+        return GetPathService.get(query)
