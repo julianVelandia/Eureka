@@ -4,7 +4,7 @@ from internal.information.core.query.get_config import GetConfig
 
 
 class GetConfigService:
-    def get_config(self, query: GetConfig) -> Path:
+    def get_path(self, query: GetConfig) -> Path:
         pass
 
 
@@ -18,7 +18,7 @@ class GetByConfig:
     requests_service: RequestService
 
     def execute(self, query: GetConfig) -> Information:
-        path = GetConfigService.get_config(query)
+        path = GetConfigService.get_path(query)
         # TODO Manejo de errores
 
         information = RequestService.get_information(path)

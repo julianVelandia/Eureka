@@ -1,28 +1,27 @@
 from internal.information.core.entity.path import Path as PathEntity
 from internal.information.core.query.get_config import GetConfig
+from internal.information.core.service.read_path.config_file.service import GetPathService
 from internal.information.infrastructure.getpath.config.model.query import QueryModel
-from internal.platform.json.models.query import QueryPlatformModel as QueryPlatformModel
-from internal.information.infrastructure.getpath.config.model.path import PathModel as PathPlatformModel
-
+from internal.information.infrastructure.getpath.config.model.path import PathModel
 
 
 class MapperInterface:
-    def path_platform_model_to_entity(self, path_platform_model: PathPlatformModel) -> PathEntity:
+    def path_model_to_entity(self, path_model: PathModel) -> PathEntity:
         pass
 
-    def query_model_to_platform_model(self, query_model: QueryModel) -> QueryPlatformModel:
+    def query_entity_to_model(self, query_entity: GetConfig) -> QueryModel:
         pass
 
 
 class jsonMappingInterface:
-    def mapping_json_config_to_path(self, query_model: QueryModel) -> PathEntity:
+    def mapping_json_config_to_path(self, query_model: QueryModel) -> PathModel:
         pass
 
 
-class ProcessPathConfig:
+class ProcessPathConfig(GetPathService):
     mapper: MapperInterface
 
-    def get(self, query_model: QueryModel) -> PathEntity:
-        platform_model = MapperInterface.query_model_to_platform_model(query_model)
-        path_platform_model = jsonMappingInterface.mapping_json_config_to_path(platform_model)
-        return MapperInterface.path_platform_model_to_entity(path_platform_model)
+    def get(self, query: GetConfig) -> PathEntity:
+        query_model = MapperInterface.query_entity_to_model(query)
+        path_model = jsonMappingInterface.mapping_json_config_to_path(query_model)
+        return MapperInterface.path_model_to_entity(path_model)
