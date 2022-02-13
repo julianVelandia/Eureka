@@ -1,18 +1,14 @@
-from internal.information.core.query.get_config import QueryConfig
 from internal.information.core.entity.path import Path
-from internal.information.infrastructure.getpath.config.model.query import QueryModel
+from internal.information.core.query.get_config import GetConfig
 
 
-class PathConfig:
-    def get(self, query_model: QueryModel) -> QueryConfig:
+class GetPath:
+    def get(self, query: GetConfig) -> Path:
         pass
 
-class MapperInterface:
-    def
-        pass
 
 class Service:
-    path_config = PathConfig
-    mapper = MapperInterface
+    path_config = GetPath
 
-    def get_config(self, query: QueryConfig) -> Path:
+    def get_config(self, query: GetConfig) -> Path:
+        return GetPath.get(query)
