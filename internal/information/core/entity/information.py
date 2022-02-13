@@ -1,5 +1,8 @@
 class Information:
-    def __init__(self, text):
-        self.text = text
+    __text: str
 
-    text: str
+    def __init__(self, text: str):
+        self.__text = text
+
+    def get_text(self) -> str:
+        return self.__text
