@@ -1,14 +1,14 @@
 import json
 
-from internal.information.core.service.read_path.config_file.service import GetPathService
 from internal.information.infrastructure.getpath.config.model.query import QueryModel
 from internal.information.infrastructure.getpath.config.model.path import PathModel
+from internal.information.infrastructure.getpath.config.process import ProcessPathConfig
 
 ABSOLUTE_PATH = '../defaultconfig'
 JSON_FILE = '.json'
 
 
-class ProcessPathConfig(GetPathService):
+class JsonMapping(ProcessPathConfig):
     def mapping_json_config_to_path(self, query_model: QueryModel) -> PathModel:
         # TODO try cath finaly
         # TODO def armar url

@@ -13,7 +13,7 @@ class MapperInterface:
         pass
 
 
-class jsonMappingInterface:
+class JsonMappingInterface:
     def mapping_json_config_to_path(self, query_model: QueryModel) -> PathModel:
         pass
 
@@ -23,5 +23,5 @@ class ProcessPathConfig(GetPathService):
 
     def get(self, query: GetConfig) -> PathEntity:
         query_model = MapperInterface.query_entity_to_model(query)
-        path_model = jsonMappingInterface.mapping_json_config_to_path(query_model)
+        path_model = JsonMappingInterface.mapping_json_config_to_path(query_model)
         return MapperInterface.path_model_to_entity(path_model)

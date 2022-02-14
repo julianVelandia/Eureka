@@ -1,5 +1,5 @@
-from internal.information.core.entity.path import Path
 from internal.information.core.entity.information import Information
+from internal.information.core.entity.path import Path
 from internal.information.core.query.get_config import GetConfig
 
 
@@ -8,19 +8,19 @@ class GetConfigService:
         pass
 
 
-class RequestService:
+class GetInformationService:
     def get_information(self, path: Path) -> Information:
         pass
 
 
 class GetByConfig:
     get_config_service: GetConfigService
-    requests_service: RequestService
+    get_information_service: GetInformationService
 
     def execute(self, query: GetConfig) -> Information:
         path = GetConfigService.get_path(query)
         # TODO Manejo de errores
 
-        information = RequestService.get_information(path)
+        full_information = GetInformationService.get_information(path)
 
-        return information
+        return full_information
