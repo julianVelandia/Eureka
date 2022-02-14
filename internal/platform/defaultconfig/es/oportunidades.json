@@ -1,14 +1,5 @@
 {
-  "paths" : [
-    {
-      "base_url" : "https://www.alkosto.com/celular-samsung-galaxy-a21s-128-gb-azul/p/88060907958482",
-      "text_tag" : "https://www.alkosto.com/celular-samsung-galaxy-a21s-128-gb-azul/p/8806090795848",
-      "text_class_name" : "/html/body/main/section/section/div/div/div/ul"
-    },
-    {
-      "base_url" : "https://www.alkosto.com/celular-samsung-galaxy-a21s-128-gb-azul/p/88060907958482",
-      "text_tag" : "https://www.alkosto.com/celular-samsung-galaxy-a21s-128-gb-azul/p/8806090795848",
-      "text_class_name" : "/html/body/main/section/section/div/div/div/ul"
-    }
-  ]
+  "base_url" : "https://www.alkosto.com/celular-samsung-galaxy-a21s-128-gb-azul/p/88060907958482",
+  "text_tag" : "https://www.alkosto.com/celular-samsung-galaxy-a21s-128-gb-azul/p/8806090795848",
+  "text_class_name" : "/html/body/main/section/section/div/div/div/ul"
 }
