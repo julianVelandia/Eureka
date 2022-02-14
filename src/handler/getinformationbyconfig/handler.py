@@ -17,3 +17,11 @@ class MapperInterface:
         pass
 
 class Handler:
+    def handler(self, requestParams: Params) -> InformationResponse:
+        #TODO Validation params service in platform
+
+        query = MapperInterface.request_to_query(requestParams)
+        #TODO verificar status coda
+        information = UseCase.execute(query)
+
+        return MapperInterface.entity_to_response(information)
