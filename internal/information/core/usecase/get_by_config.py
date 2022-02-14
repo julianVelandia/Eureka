@@ -1,6 +1,7 @@
 from internal.information.core.entity.information import Information
 from internal.information.core.entity.path import Path
 from internal.information.core.query.get_config import GetConfig
+from src.handler.getinformationbyconfig.handler import UseCase
 
 
 class GetConfigService:
@@ -13,7 +14,7 @@ class GetInformationService:
         pass
 
 
-class GetByConfig:
+class GetByConfig(UseCase):
     get_config_service: GetConfigService
     get_information_service: GetInformationService
 

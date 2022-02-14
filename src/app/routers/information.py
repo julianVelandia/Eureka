@@ -1,7 +1,9 @@
 from fastapi import APIRouter
 
+from src.handler.getinformationbyconfig.contract.request import Params
+
 information_router = APIRouter()
 
-@information_router.get("/information/{params}")
-async def information_by_name(params: str):
-    return "Hello world - get information by params" + params
+@information_router.get("/information/config/{params}")
+async def information_by_name(params: Params):
+    return handler_item_by_name(params)
