@@ -1,5 +1,5 @@
-from internal.information.core.entity.path import Path
 from internal.information.core.entity.information import Information
+from internal.information.core.entity.path import Path
 from internal.information.core.query.get_config import GetConfig
 
 
@@ -21,6 +21,6 @@ class GetByConfig:
         path = GetConfigService.get_path(query)
         # TODO Manejo de errores
 
-        information = GetInformationService.get_information(path)
+        full_information = GetInformationService.get_information(path)
 
-        return information
+        return full_information

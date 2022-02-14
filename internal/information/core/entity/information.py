@@ -6,3 +6,6 @@ class Information:
 
     def get_text(self) -> str:
         return self.__text
+
+
+

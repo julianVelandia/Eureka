@@ -14,10 +14,8 @@ class Mapper(MapperInterface):
         return query_platform_model
 
     def path_model_to_entity(self, path_model: PathModel) -> PathEntity:
-        path_entity = PathEntity(
+        return PathEntity(
             path_model.base_url,
             path_model.text_tag,
             path_model.text_class_name,
         )
-
-        return path_entity

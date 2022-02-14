@@ -2,18 +2,18 @@ from bs4 import BeautifulSoup
 import requests
 import re
 
+from internal.information.infrastructure.getpath.config.model.path import PathModel
+from internal.information.infrastructure.request.model.information import InformationModel
 from internal.information.infrastructure.request.process import ProcessInformation
-from internal.platform.scraper.models.path import Path
 
-from internal.platform.scraper.models.information import Information
 
 CLASS = "class"
 PARSER = "html.parser"
 
 
 class Request(ProcessInformation):
-    def single_request(self, path: Path):
-        response = Information("")
+    def single_request(self, path: PathModel) -> InformationModel:
+        response = InformationModel()
 
         # TODO try and catch
 
@@ -36,7 +36,7 @@ class Request(ProcessInformation):
 
         return class_names
 
-    def url_is_valid(self, path: str):
+    def url_is_valid(self, path: str) -> bool:
         regex = re.compile(
             r'^(?:http|ftp)s?://'  # http:// or https://
             r'(?:(?:[A-Z0-9](?:[A-Z0-9-]{0,61}[A-Z0-9])?\.)+(?:[A-Z]{2,6}\.?|[A-Z0-9-]{2,}\.?)|'  # domain...
