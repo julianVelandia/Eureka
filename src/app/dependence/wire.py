@@ -5,4 +5,5 @@ class HandlerContainer:
     GetInformationHandler: Handler
 
 def new_wire() -> HandlerContainer:
-    conf = GetConfig()
+    pass
+    #conf = GetConfig()
