@@ -10,16 +10,18 @@ class RequestService:
     def validate_url(self, url: str) -> bool:
         pass
 
+
 class Service(GetInformationService):
 
-    def get_information(self, path: Path) -> Information:
-        #TODO mirar otras opciones por rendimiento
-        #TODO límite de request por response
-        #TODO as list comprehension para multiples paths
+    request_service = RequestService()
 
-        #TODO Try cathc
-        if RequestService.validate_url(path.get_base_url()):
-            return RequestService.get(path)
+    def get_information(self, path: Path) -> Information:
+        # TODO mirar otras opciones por rendimiento
+        # TODO límite de request por response
+        # TODO as list comprehension para multiples paths
+
+        # TODO Try cathc
+        if self.request_service.validate_url(path.get_base_url()):
+            return self.request_service.get(path)
         else:
             return Information("")
-

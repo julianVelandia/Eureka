@@ -6,10 +6,10 @@ from src.handler.getinformationbyconfig.handler import MapperInterface
 
 
 class Mapper(MapperInterface):
-    def request_to_query(self, request: Params) -> GetConfig:
+    def request_to_query(self, request_params: Params) -> GetConfig:
         return GetConfig(
-            request.language,
-            request.config_name,
+            request_params.language,
+            request_params.config_name,
         )
 
     def entity_to_response(self, information: Information) -> InformationResponse:

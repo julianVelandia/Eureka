@@ -11,9 +11,10 @@ class Mapper(MapperInterface):
         return InformationEntity(information_model.text)
 
     def path_entity_to_model(self, path_entity: PathEntity) -> PathModel:
-        path_model = PathModel()
-        path_model.base_url = path_model.base_url
-        path_model.text_tag = path_model.text_tag
-        path_model.text_class_name = path_model.text_class_name
+        path_model = PathModel(
+            path_entity.get_base_url(),
+            path_entity.get_text_tag(),
+            path_entity.get_text_class_name()
+        )
 
         return path_model

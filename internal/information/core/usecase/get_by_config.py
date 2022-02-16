@@ -15,13 +15,13 @@ class GetInformationService:
 
 
 class GetByConfig(UseCase):
-    get_config_service: GetConfigService
-    get_information_service: GetInformationService
+    get_config_service: GetConfigService()
+    get_information_service: GetInformationService()
 
     def execute(self, query: GetConfig) -> Information:
-        path = GetConfigService.get_path(query)
+        path = self.get_config_service.get_path(query)
         # TODO Manejo de errores
 
-        full_information = GetInformationService.get_information(path)
+        full_information = self.get_information_service.get_information(path)
 
         return full_information

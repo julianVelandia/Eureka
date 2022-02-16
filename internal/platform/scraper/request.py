@@ -13,7 +13,6 @@ PARSER = "html.parser"
 
 class Request(ProcessInformation):
     def single_request(self, path: PathModel) -> InformationModel:
-        response = InformationModel()
 
         # TODO try and catch
 
@@ -21,9 +20,9 @@ class Request(ProcessInformation):
         soup = BeautifulSoup(url.content, PARSER)
 
         class_names_text = self.format_class_names(path.text_class_name)
-        response.text = soup.find(path.text_tag, {CLASS: class_names_text}).text
+        text = soup.find(path.text_tag, {CLASS: class_names_text}).text
 
-        return response
+        return InformationModel(text)
 
     def format_class_names(self, names: [str]):
         class_names = ""

@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
 from src.handler.getinformationbyconfig.contract.request import Params
-from src.handler.getinformationbyconfig.handler import Handler as information_by_config
+from src.handler.getinformationbyconfig.handler import Handler as handler_information_by_config
 
 
 information_router = APIRouter()
@@ -12,4 +12,4 @@ async def information_by_config(language: str, config_name: str):
     params = Params()
     params.language = language
     params.config_name = config_name
-    return information_by_config(params)
+    return handler_information_by_config().handler(params)

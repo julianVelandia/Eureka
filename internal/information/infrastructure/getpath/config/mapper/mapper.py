@@ -7,9 +7,10 @@ from internal.information.core.entity.path import Path as PathEntity
 
 class Mapper(MapperInterface):
     def query_entity_to_model(self, query_entity: GetConfig) -> QueryModel:
-        query_platform_model = QueryModel()
-        query_platform_model.language = query_entity.get_language
-        query_platform_model.file_name = query_entity.get_file_name
+        query_platform_model = QueryModel(
+            query_entity.get_language(),
+            query_entity.get_file_name(),
+        )
 
         return query_platform_model
 

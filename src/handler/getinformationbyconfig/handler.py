@@ -10,18 +10,21 @@ class UseCase:
 
 
 class MapperInterface:
-    def request_to_query(self, request: Params) -> GetConfig:
+    def request_to_query(self, request_params: Params) -> GetConfig:
         pass
 
     def entity_to_response(self, information: Information) -> InformationResponse:
         pass
 
+
 class Handler:
-    def handler(self, requestParams: Params) -> InformationResponse:
-        #TODO Validation params service in platform
+    def handler(self, request_params: Params) -> InformationResponse:
+        # TODO Validation params service in platform
+        use_case = UseCase()
+        mapper = MapperInterface()
 
-        query = MapperInterface.request_to_query(requestParams)
-        #TODO verificar status coda
-        information = UseCase.execute(query)
+        query = mapper.request_to_query(request_params)
+        # TODO verificar status coda
+        information = use_case.execute(query)
 
-        return MapperInterface.entity_to_response(information)
+        return mapper.entity_to_response(information)

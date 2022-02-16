@@ -1,6 +1,4 @@
-from pydantic import BaseModel
 
-
-class Params(BaseModel):
+class Params:
     language: str
     config_name: str

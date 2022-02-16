@@ -9,7 +9,7 @@ class GetPathService:
 
 
 class Service(GetConfigService):
-    path_config = GetPathService
+    path_config = GetPathService()
 
     def get_path(self, query: GetConfig) -> Path:
-        return GetPathService.get(query)
+        return self.path_config.get(query)
