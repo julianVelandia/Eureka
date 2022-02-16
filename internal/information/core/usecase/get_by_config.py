@@ -1,22 +1,12 @@
 from internal.information.core.entity.information import Information
-from internal.information.core.entity.path import Path
 from internal.information.core.query.get_config import GetConfig
-from src.handler.getinformationbyconfig.handler import UseCase
+from internal.information.core.usecase.ports import GetConfigService, GetInformationService
+from src.handler.getinformationbyconfig.ports import UseCaseInterface
 
 
-class GetConfigService:
-    def get_path(self, query: GetConfig) -> Path:
-        pass
-
-
-class GetInformationService:
-    def get_information(self, path: Path) -> Information:
-        pass
-
-
-class GetByConfig(UseCase):
-    get_config_service: GetConfigService()
-    get_information_service: GetInformationService()
+class GetByConfig(UseCaseInterface):
+    get_config_service = GetConfigService()
+    get_information_service = GetInformationService()
 
     def execute(self, query: GetConfig) -> Information:
         path = self.get_config_service.get_path(query)

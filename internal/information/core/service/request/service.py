@@ -1,14 +1,7 @@
 from internal.information.core.entity.information import Information
 from internal.information.core.entity.path import Path
+from internal.information.core.service.request.ports import RequestService
 from internal.information.core.usecase.get_by_config import GetInformationService
-
-
-class RequestService:
-    def get(self, path: Path) -> Information:
-        pass
-
-    def validate_url(self, url: str) -> bool:
-        pass
 
 
 class Service(GetInformationService):

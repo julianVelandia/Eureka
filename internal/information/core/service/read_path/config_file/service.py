@@ -1,11 +1,7 @@
 from internal.information.core.entity.path import Path
 from internal.information.core.query.get_config import GetConfig
+from internal.information.core.service.read_path.config_file.ports import GetPathService
 from internal.information.core.usecase.get_by_config import GetConfigService
-
-
-class GetPathService:
-    def get(self, query: GetConfig) -> Path:
-        pass
 
 
 class Service(GetConfigService):
