@@ -23,12 +23,13 @@ class RequestInterface:
 
 
 class ProcessInformation(RequestService):
-    mapper: MapperInterface
+    mapper = MapperInterface
+    request_interface = RequestInterface
 
     def get(self, path_entity: PathEntity) -> InformationEntity:
-        path_model = MapperInterface.path_entity_to_model(path_entity)
-        information_model = RequestInterface.single_request(path_model)
-        return MapperInterface.information_model_to_entity(information_model)
+        path_model = self.mapper.path_entity_to_model(path_entity)
+        information_model = self.request_interface.single_request(path_model)
+        return self.mapper.information_model_to_entity(information_model)
 
     def validate_url(self, url: str) -> bool:
         return RequestInterface.url_is_valid(url)
