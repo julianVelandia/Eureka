@@ -1,4 +1,4 @@
-from internal.information.core.usecase.get_by_config import GetByConfig
+from internal.information.core.usecase.get_by_config import UseCaseGetByConfig
 from src.handler.getinformationbyconfig.contract.request import Params
 from src.handler.getinformationbyconfig.contract.response import InformationResponse
 from src.handler.getinformationbyconfig.mapper.mapper import Mapper
@@ -6,7 +6,7 @@ from src.handler.getinformationbyconfig.mapper.mapper import Mapper
 
 class Handler:
     mapper = Mapper()
-    use_case = GetByConfig()
+    use_case = UseCaseGetByConfig()
 
     def handler(self, request_params: Params) -> InformationResponse:
 

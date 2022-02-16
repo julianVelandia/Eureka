@@ -16,10 +16,3 @@ class MapperInterface(metaclass=ABCMeta):
         pass
 
 
-class RequestInterface(metaclass=ABCMeta):
-    @abstractmethod
-    def single_request(self, path_model: PathModel) -> InformationModel:
-        pass
-
-    def url_is_valid(self, path: str) -> bool:
-        pass

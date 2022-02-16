@@ -3,13 +3,12 @@ import os
 
 from internal.information.infrastructure.getpath.config.model.query import QueryModel
 from internal.information.infrastructure.getpath.config.model.path import PathModel
-from internal.information.infrastructure.getpath.config.process import ProcessPathConfig
 
 JSON_FILE = '.json'
 RELATIVE_PATH = 'Eureka\\internal\\platform\\defaultconfig\\'
 
 
-class JsonMapping(ProcessPathConfig):
+class JsonMapping:
     def mapping_json_config_to_path(self, query_model: QueryModel) -> PathModel:
         # TODO try cath finaly
         # TODO def armar url
@@ -31,10 +30,4 @@ class JsonMapping(ProcessPathConfig):
                 break
             base_path += folder + '\\'
 
-
         return base_path + RELATIVE_PATH + query_model.language + '\\' + query_model.file_name + JSON_FILE
-
-
-if __name__ == "__main__":
-    j = JsonMapping()
-    print(j.mapping_json_config_to_path(QueryModel("es", "oportunidades")).text_class_name)

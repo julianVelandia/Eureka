@@ -1,12 +1,12 @@
 from internal.information.core.entity.information import Information
 from internal.information.core.entity.path import Path
-from internal.information.core.service.request.ports import RequestService
-from internal.information.core.usecase.get_by_config import GetInformationService
+from internal.information.core.usecase.ports import GetInformationServiceInterface
+from internal.information.infrastructure.request.process import ProcessInformation
 
 
-class Service(GetInformationService):
+class ServiceRequest(GetInformationServiceInterface):
 
-    request_service = RequestService()
+    request_service = ProcessInformation()
 
     def get_information(self, path: Path) -> Information:
         # TODO mirar otras opciones por rendimiento

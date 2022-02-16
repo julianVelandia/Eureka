@@ -1,8 +1,8 @@
 from internal.information.infrastructure.request.model.information import InformationModel
 from internal.information.infrastructure.request.model.path import PathModel
-from internal.information.infrastructure.request.process import MapperInterface
 from internal.information.core.entity.path import Path as PathEntity
 from internal.information.core.entity.information import Information as InformationEntity
+from internal.information.infrastructure.request.ports import MapperInterface
 
 
 class Mapper(MapperInterface):

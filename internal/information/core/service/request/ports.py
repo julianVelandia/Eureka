@@ -4,7 +4,7 @@ from internal.information.core.entity.information import Information
 from internal.information.core.entity.path import Path
 
 
-class RequestService(metaclass=ABCMeta):
+class RequestServiceInterface(metaclass=ABCMeta):
     @abstractmethod
     def get(self, path: Path) -> Information:
         pass

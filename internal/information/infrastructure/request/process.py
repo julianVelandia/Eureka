@@ -1,13 +1,14 @@
 from internal.information.core.entity.path import Path as PathEntity
 from internal.information.core.entity.information import Information as InformationEntity
+from internal.information.core.service.request.ports import RequestServiceInterface
+from internal.information.infrastructure.request.mapper.mapper import Mapper
 
-from internal.information.core.service.request.service import RequestService
-from internal.information.infrastructure.request.ports import MapperInterface, RequestInterface
+from internal.platform.scraper.request import Request
 
 
-class ProcessInformation(RequestService):
-    mapper = MapperInterface()
-    request_interface = RequestInterface()
+class ProcessInformation(RequestServiceInterface):
+    mapper = Mapper()
+    request_interface = Request()
 
     def get(self, path_entity: PathEntity) -> InformationEntity:
         path_model = self.mapper.path_entity_to_model(path_entity)

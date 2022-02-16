@@ -15,8 +15,3 @@ class MapperInterface(metaclass=ABCMeta):
     def query_entity_to_model(self, query_entity: GetConfig) -> QueryModel:
         pass
 
-
-class JsonMappingInterface(metaclass=ABCMeta):
-    @abstractmethod
-    def mapping_json_config_to_path(self, query_model: QueryModel) -> PathModel:
-        pass

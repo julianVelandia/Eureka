@@ -4,13 +4,12 @@ import re
 
 from internal.information.infrastructure.getpath.config.model.path import PathModel
 from internal.information.infrastructure.request.model.information import InformationModel
-from internal.information.infrastructure.request.process import ProcessInformation, RequestInterface
 
 CLASS = "class"
 PARSER = "html.parser"
 
 
-class Request(ProcessInformation, RequestInterface):
+class Request:
     def single_request(self, path: PathModel) -> InformationModel:
 
         # TODO try and catch
