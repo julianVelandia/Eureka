@@ -1,5 +1,50 @@
-{
-  "base_url" : "https://fastapi.tiangolo.com/",
-  "text_tag" : "span",
-  "text_class_name" : ["md-ellipsis"]
-}
+[
+  {
+    "section_id": "b3cb7919-10c9-4704-bb05-42161060637b",
+    "base_url" : "https://web.icetex.gov.co/es/-/diplomado-competencias-digitales-docencia",
+    "text_tag" : "div",
+    "text_class_name" : ["col-12", "pb-3"],
+    "children_tag": "h1",
+    "children_class_name": []
+  },
+  {
+    "section_id": "b3cb7919-10c9-4704-bb05-42161060637b",
+    "base_url" : "https://web.icetex.gov.co/es/-/diplomado-competencias-digitales-docencia",
+    "text_tag" : "div",
+    "text_class_name" : ["descrp_conv"],
+    "children_tag": "p",
+    "children_class_name": []
+  },
+  {
+    "section_id": "76e8fb84-42b3-4900-a5a8-3a8645385092",
+    "base_url" : "https://web.icetex.gov.co/es/-/practical-sustainable-technology",
+    "text_tag" : "div",
+    "text_class_name" : ["col-12", "pb-3"],
+    "children_tag": "h1",
+    "children_class_name": []
+  },
+  {
+    "section_id": "76e8fb84-42b3-4900-a5a8-3a8645385092",
+    "base_url" : "https://web.icetex.gov.co/es/-/practical-sustainable-technology",
+    "text_tag" : "div",
+    "text_class_name" : ["descrp_conv"],
+    "children_tag": "p",
+    "children_class_name": []
+  },
+  {
+    "section_id": "dfd0f819-3b2e-4b35-b3a0-aa0bbb00d1c2",
+    "base_url" : "https://app.becas-santander.com/es/program/becas-santander-idiomas-online-english-courses-2022-british-council",
+    "text_tag" : "h1",
+    "text_class_name" : ["text-title", "font-weight-bold"],
+    "children_tag": "",
+    "children_class_name": []
+  },
+  {
+    "section_id": "dfd0f819-3b2e-4b35-b3a0-aa0bbb00d1c2",
+    "base_url" : "https://app.becas-santander.com/es/program/becas-santander-idiomas-online-english-courses-2022-british-council",
+    "text_tag" : "p",
+    "text_class_name" : ["pt-4", "ng-star-inserted"],
+    "children_tag": "",
+    "children_class_name": []
+  }
+]

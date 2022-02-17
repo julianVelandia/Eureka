@@ -11,10 +11,10 @@ class UseCaseGetByConfig(UseCaseInterface):
     get_information_service = ServiceRequest()
 
     def execute(self, query: GetConfig) -> Information:
-        path = self.get_config_service.get_path(query)
-        # TODO Manejo de errores
+        for path in self.get_config_service.get_path(query):
+            # TODO Manejo de errores
 
-        full_information = self.get_information_service.get_information(path)
+            full_information = self.get_information_service.get_information(path)
 
         return full_information
 

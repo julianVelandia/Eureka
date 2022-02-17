@@ -5,7 +5,6 @@ from internal.information.infrastructure.request.process import ProcessInformati
 
 
 class ServiceRequest(GetInformationServiceInterface):
-
     request_service = ProcessInformation()
 
     def get_information(self, path: Path) -> Information:
@@ -13,8 +12,14 @@ class ServiceRequest(GetInformationServiceInterface):
         # TODO límite de request por response
         # TODO as list comprehension para multiples paths
 
+        # TODO utilizar yield para mejorar rendimiento
         # TODO Try cathc
-        if self.request_service.validate_url(path.get_base_url()):
-            return self.request_service.get(path)
-        else:
-            return Information("")
+
+        information = Information([])
+        for single_path in path.get_full_path():
+            if self.request_service.validate_url(single_path.get_base_url()):
+                information.append_information(self.request_service.get(path))
+            else:
+                # TODO catch error
+                pass
+        return information
