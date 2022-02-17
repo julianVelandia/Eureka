@@ -1,27 +1,20 @@
-from internal.information.core.entity.information import Information
-from internal.information.core.query.get_config import GetConfig
+from internal.information.core.usecase.get_by_config import UseCaseGetByConfig
 from src.handler.getinformationbyconfig.contract.request import Params
 from src.handler.getinformationbyconfig.contract.response import InformationResponse
+from src.handler.getinformationbyconfig.mapper.mapper import Mapper
 
-
-class UseCase:
-    def execute(self, query: GetConfig) -> Information:
-        pass
-
-
-class MapperInterface:
-    def request_to_query(self, request: Params) -> GetConfig:
-        pass
-
-    def entity_to_response(self, information: Information) -> InformationResponse:
-        pass
 
 class Handler:
-    def handler(self, requestParams: Params) -> InformationResponse:
-        #TODO Validation params service in platform
+    mapper = Mapper()
+    use_case = UseCaseGetByConfig()
 
-        query = MapperInterface.request_to_query(requestParams)
-        #TODO verificar status coda
-        information = UseCase.execute(query)
+    def handler(self, request_params: Params) -> InformationResponse:
 
-        return MapperInterface.entity_to_response(information)
+        # TODO Validation params service in platform
+        query = self.mapper.request_to_query(request_params)
+        # TODO verificar status code
+        information = self.use_case.execute(query)
+
+        return self.mapper.entity_to_response(information)
+
+

@@ -1,5 +1,9 @@
-from pydantic import BaseModel
+# from pydantic import BaseModel
 
 
-class InformationResponse(BaseModel):
+class InformationResponse:
     information: str
+
+    def __init__(self, information: str):
+        self.information = information
+
