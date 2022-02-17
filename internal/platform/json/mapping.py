@@ -20,7 +20,7 @@ class JsonMapping:
         result = []
 
         for single_path in data:
-            single_result = PathModel("", "", "", [], "", [])
+            single_result = PathModel("", "", "", [], "")
             single_result.__dict__ = single_path
             result.append(single_result)
 

@@ -10,11 +10,35 @@ request = Request()
 @pytest.mark.parametrize(
     "input_a, expected",
     [
-        (PathModel("https://fastapi.tiangolo.com/", "span", ["md-ellipsis"]), InformationModel("\n            FastAPI\n          "))
+        (PathModel(
+                "b3cb7919-10c9-4704-bb05-42161060637b",
+                "https://web.icetex.gov.co/es/-/diplomado-competencias-digitales-docencia",
+                "div",
+                ["col-12", "pb-3"],
+                "h1",
+        ), InformationModel(
+            "b3cb7919-10c9-4704-bb05-42161060637b",
+            "\nDiplomado en Competencias Digitales para la Docencia\n",
+            "https://web.icetex.gov.co/es/-/diplomado-competencias-digitales-docencia",
+        )),
+        (PathModel(
+            "b3cb7919-10c9-4704-bb05-42161060637b",
+            "https://fastapi.tiangolo.com/",
+            "span",
+            ["md-ellipsis"],
+            "",
+        ), InformationModel(
+            "b3cb7919-10c9-4704-bb05-42161060637b",
+            "\n            FastAPI\n          ",
+            "https://fastapi.tiangolo.com/",
+        ))
     ]
 )
 def test_single_request(input_a, expected):
     assert request.single_request(input_a).text == expected.text
+    assert request.single_request(input_a).link == expected.link
+    assert request.single_request(input_a).uuid == expected.uuid
+
 
 
 @pytest.mark.parametrize(

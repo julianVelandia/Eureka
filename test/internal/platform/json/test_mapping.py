@@ -16,7 +16,6 @@ json_mapping = JsonMapping()
                 "div",
                 ["col-12", "pb-3"],
                 "h1",
-                [],
         ),
             PathModel(
                 "b3cb7919-10c9-4704-bb05-42161060637b",
@@ -24,7 +23,6 @@ json_mapping = JsonMapping()
                 "div",
                 ["descrp_conv"],
                 "p",
-                [],
         ),
             PathModel(
                 "76e8fb84-42b3-4900-a5a8-3a8645385092",
@@ -32,7 +30,6 @@ json_mapping = JsonMapping()
                 "div",
                 ["col-12", "pb-3"],
                 "h1",
-                [],
         ),
             PathModel(
                 "76e8fb84-42b3-4900-a5a8-3a8645385092",
@@ -40,7 +37,6 @@ json_mapping = JsonMapping()
                 "div",
                 ["descrp_conv"],
                 "p",
-                [],
         ),
             PathModel(
                 "dfd0f819-3b2e-4b35-b3a0-aa0bbb00d1c2",
@@ -48,7 +44,6 @@ json_mapping = JsonMapping()
                 "h1",
                 ["text-title", "font-weight-bold"],
                 "",
-                [],
         ),
             PathModel(
                 "dfd0f819-3b2e-4b35-b3a0-aa0bbb00d1c2",
@@ -56,7 +51,6 @@ json_mapping = JsonMapping()
                 "p",
                 ["pt-4", "ng-star-inserted"],
                 "",
-                [],
         )]
          )
         # TODO test cuando falla con el try cath
@@ -72,7 +66,6 @@ def test_mapping_json_config_to_path(input_a, expected):
         assert path_model[i].text_tag == expected[i].text_tag
         assert path_model[i].text_class_name == expected[i].text_class_name
         assert path_model[i].children_tag == expected[i].children_tag
-        assert path_model[i].children_class_name == expected[i].children_class_name
 
 
 @pytest.mark.parametrize(

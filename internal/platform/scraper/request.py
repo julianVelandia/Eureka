@@ -13,15 +13,21 @@ class Request:
     def single_request(self, path: PathModel) -> InformationModel:
 
         # TODO try and catch
+        information_response = InformationModel(path.section_id, "", path.base_url)
 
         url = requests.get(path.base_url)
         soup = BeautifulSoup(url.content, PARSER)
 
-
         class_names_text = self.format_class_names(path.text_class_name)
-        text = soup.find(path.text_tag, {CLASS: class_names_text}).text
+        father = soup.find(path.text_tag, {CLASS: class_names_text})
 
-        return InformationModel(text)
+        if father.text == '':
+            children = father.findChildren(path.children_tag, recursive=False)
+            information_response.text = children.text
+        else:
+            information_response.text = father.text
+
+        return information_response
 
     def format_class_names(self, names: [str]):
         class_names = ""
