@@ -1,26 +1,19 @@
-from internal.information.core.entity.path import Path
 from internal.information.core.entity.information import Information
 from internal.information.core.query.get_config import GetConfig
+from internal.information.core.service.readpath.configfile.service import ServiceGetByConfig
+from internal.information.core.service.request.service import ServiceRequest
+from src.handler.getinformationbyconfig.ports import UseCaseInterface
 
 
-class GetConfigService:
-    def get_path(self, query: GetConfig) -> Path:
-        pass
+class UseCaseGetByConfig(UseCaseInterface):
 
-
-class RequestService:
-    def get_information(self, path: Path) -> Information:
-        pass
-
-
-class GetByConfig:
-    get_config_service: GetConfigService
-    requests_service: RequestService
+    get_config_service = ServiceGetByConfig()
+    get_information_service = ServiceRequest()
 
     def execute(self, query: GetConfig) -> Information:
-        path = GetConfigService.get_path(query)
+        path = self.get_config_service.get_path(query)
         # TODO Manejo de errores
 
-        information = RequestService.get_information(path)
+        full_information = self.get_information_service.get_information(path)
 
-        return information
+        return full_information
