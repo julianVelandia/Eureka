@@ -8,6 +8,7 @@ from internal.information.infrastructure.request.model.information import Inform
 CLASS = "class"
 PARSER = "html.parser"
 
+
 class Request:
     def single_request(self, path: PathModel) -> InformationModel:
 
@@ -15,6 +16,7 @@ class Request:
 
         url = requests.get(path.base_url)
         soup = BeautifulSoup(url.content, PARSER)
+
 
         class_names_text = self.format_class_names(path.text_class_name)
         text = soup.find(path.text_tag, {CLASS: class_names_text}).text
