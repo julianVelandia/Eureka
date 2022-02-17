@@ -1,6 +1,6 @@
 from internal.information.core.entity.information import Information
 from internal.information.core.query.get_config import GetConfig
-from internal.information.core.service.read_path.config_file.service import ServiceGetByConfig
+from internal.information.core.service.readpath.configfile.service import ServiceGetByConfig
 from internal.information.core.service.request.service import ServiceRequest
 from src.handler.getinformationbyconfig.ports import UseCaseInterface
 

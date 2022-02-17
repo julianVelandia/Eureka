@@ -1,6 +1,6 @@
 from internal.information.core.entity.path import Path as PathEntity
 from internal.information.core.query.get_config import GetConfig
-from internal.information.core.service.read_path.config_file.ports import ServiceGetPathInterface
+from internal.information.core.service.readpath.configfile.ports import ServiceGetPathInterface
 from internal.information.infrastructure.getpath.config.mapper.mapper import Mapper
 from internal.platform.json.mapping import JsonMapping
 
