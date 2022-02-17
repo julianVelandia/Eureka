@@ -8,7 +8,7 @@ class Handler:
     mapper = Mapper()
     use_case = UseCaseGetByConfig()
 
-    def handler(self, request_params: Params) -> InformationResponse:
+    def handler(self, request_params: Params) -> [InformationResponse]:
 
         # TODO Validation params service in platform
         query = self.mapper.request_to_query(request_params)

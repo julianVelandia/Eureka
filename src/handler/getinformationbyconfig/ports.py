@@ -18,5 +18,5 @@ class MapperInterface(metaclass=ABCMeta):
         pass
 
     @abstractmethod
-    def entity_to_response(self, information: Information) -> InformationResponse:
+    def entity_to_response(self, information: [Information]) -> [InformationResponse]:
         pass
