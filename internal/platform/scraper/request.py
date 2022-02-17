@@ -8,7 +8,6 @@ from internal.information.infrastructure.request.model.information import Inform
 CLASS = "class"
 PARSER = "html.parser"
 
-
 class Request:
     def single_request(self, path: PathModel) -> InformationModel:
 

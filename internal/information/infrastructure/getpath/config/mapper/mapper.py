@@ -5,6 +5,7 @@ from internal.information.core.entity.path import Path as PathEntity
 from internal.information.infrastructure.getpath.config.ports import MapperInterface
 
 
+
 class Mapper(MapperInterface):
     def query_entity_to_model(self, query_entity: GetConfig) -> QueryModel:
         query_platform_model = QueryModel(

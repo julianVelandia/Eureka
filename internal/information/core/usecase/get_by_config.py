@@ -17,3 +17,4 @@ class UseCaseGetByConfig(UseCaseInterface):
         full_information = self.get_information_service.get_information(path)
 
         return full_information
+
