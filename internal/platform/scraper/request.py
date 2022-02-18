@@ -2,14 +2,15 @@ from bs4 import BeautifulSoup
 import requests
 import re
 
-from internal.information.infrastructure.getpath.config.model.path import PathModel
+from internal.information.core.entity.path import Path as PathEntity
 from internal.information.infrastructure.request.model.information import InformationModel
 
 CLASS = "class"
 PARSER = "html.parser"
 
+
 class Request:
-    def single_request(self, path: PathModel) -> InformationModel:
+    def single_request(self, path: PathEntity) -> InformationModel:
 
         # TODO try and catch
 
@@ -17,9 +18,26 @@ class Request:
         soup = BeautifulSoup(url.content, PARSER)
 
         class_names_text = self.format_class_names(path.text_class_name)
-        text = soup.find(path.text_tag, {CLASS: class_names_text}).text
+        father = soup.find(path.get_text_tag, {CLASS: class_names_text})
 
-        return InformationModel(text)
+        if path.get_children_tag != "":
+            children = father.findChildren(path.get_children_tag, recursive=False)
+            children_text = ''
+            for c in children:
+                children_text += c.text
+            return InformationModel(
+                path.section_id,
+                children_text,
+                path.base_url,
+            )
+        else:
+            return InformationModel(
+                path.section_id,
+                "",
+                #soup.find(path.get_text_tag, {CLASS: class_names_text}).text,
+                path.base_url,
+            )
+
 
     def format_class_names(self, names: [str]):
         class_names = ""
