@@ -17,7 +17,3 @@ class MapperInterface(metaclass=ABCMeta):
     @abstractmethod
     def request_to_query(self, request_params: Params) -> GetConfig:
         pass
-
-    @abstractmethod
-    def entity_to_response(self, information: List[Information]) -> List[InformationResponse]:
-        pass

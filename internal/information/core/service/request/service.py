@@ -19,7 +19,7 @@ class ServiceRequest(GetInformationServiceInterface):
 
         information = []
         for single_path in path:
-            if self.request_service.validate_url(single_path.get_base_url()):
+            if self.request_service.validate_url(single_path.base_url):
                 # TODO as a map for saving resources
                 information.append(self.request_service.get(single_path))
             else:

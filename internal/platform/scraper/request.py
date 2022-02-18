@@ -14,10 +14,10 @@ class Request:
 
         # TODO try and catch
 
-        url = requests.get(path.get_base_url())
+        url = requests.get(path.base_url)
         soup = BeautifulSoup(url.content, PARSER)
 
-        class_names_text = self.format_class_names(path.get_text_class_name())
+        class_names_text = self.format_class_names(path.text_class_name)
         father = soup.find(path.get_text_tag, {CLASS: class_names_text})
 
         if path.get_children_tag != "":
@@ -26,15 +26,16 @@ class Request:
             for c in children:
                 children_text += c.text
             return InformationModel(
-                path.get_section_id(),
+                path.section_id,
                 children_text,
-                path.get_base_url(),
+                path.base_url,
             )
         else:
             return InformationModel(
-                path.get_section_id(),
-                soup.find(path.get_text_tag, {CLASS: class_names_text}).text,
-                path.get_base_url(),
+                path.section_id,
+                "",
+                #soup.find(path.get_text_tag, {CLASS: class_names_text}).text,
+                path.base_url,
             )
 
 
