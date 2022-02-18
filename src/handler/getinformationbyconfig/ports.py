@@ -8,7 +8,7 @@ from src.handler.getinformationbyconfig.contract.response import InformationResp
 
 class UseCaseInterface(metaclass=ABCMeta):
     @abstractmethod
-    def execute(self, query: GetConfig) -> Information:
+    def execute(self, query: GetConfig) -> [Information]:
         pass
 
 
@@ -18,5 +18,5 @@ class MapperInterface(metaclass=ABCMeta):
         pass
 
     @abstractmethod
-    def entity_to_response(self, information: [Information]) -> [InformationResponse]:
+    def entity_to_response(self, information: [Information]) -> []:
         pass

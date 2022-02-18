@@ -6,5 +6,5 @@ from internal.information.core.query.get_config import GetConfig
 
 class ServiceGetPathInterface(metaclass=ABCMeta):
     @abstractmethod
-    def get(self, query: GetConfig) -> Path:
+    def get(self, query: GetConfig) -> [Path]:
         pass

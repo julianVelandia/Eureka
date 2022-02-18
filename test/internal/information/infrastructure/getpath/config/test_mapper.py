@@ -23,19 +23,43 @@ def test_query_entity_to_model(input_a, expected):
 @pytest.mark.parametrize(
     "input_a, expected",
     [
-        (PathModel(
-            "https://fastapi.tiangolo.com/",
-            "span",
-            ["md-ellipsis"]
+        ([PathModel(
+            "b3cb7919-10c9-4704-bb05-42161060637b",
+            "https://web.icetex.gov.co/es/-/diplomado-competencias-digitales-docencia",
+            "div",
+            ["col-12", "pb-3"],
+            "h1",
         ),
-         PathEntity(
-             "https://fastapi.tiangolo.com/",
-             "span",
-             ["md-ellipsis"]
-         ))
+             PathModel(
+                 "b3cb7919-10c9-4704-bb05-42161060637b",
+                 "https://web.icetex.gov.co/es/-/diplomado-competencias-digitales-docencia",
+                 "div",
+                 ["col-12", "pb-3"],
+                 "h1",
+             ),
+         ], [
+             PathEntity(
+                 "b3cb7919-10c9-4704-bb05-42161060637b",
+                 "https://web.icetex.gov.co/es/-/diplomado-competencias-digitales-docencia",
+                 "div",
+                 ["col-12", "pb-3"],
+                 "h1",
+             ),
+             PathEntity(
+                 "b3cb7919-10c9-4704-bb05-42161060637b",
+                 "https://web.icetex.gov.co/es/-/diplomado-competencias-digitales-docencia",
+                 "div",
+                 ["col-12", "pb-3"],
+                 "h1",
+             ),
+         ])
     ]
 )
 def test_path_model_to_entity(input_a, expected):
-    assert mapper.path_model_to_entity(input_a).get_text_tag() == expected.get_text_tag()
-    assert mapper.path_model_to_entity(input_a).get_base_url() == expected.get_base_url()
-    assert mapper.path_model_to_entity(input_a).get_text_class_name() == expected.get_text_class_name()
+    response = mapper.path_model_to_entity(input_a)
+    for i in range(len(response)):
+        assert response[i].get_section_id() == expected[i].get_section_id()
+        assert response[i].get_text_tag() == expected[i].get_text_tag()
+        assert response[i].get_base_url() == expected[i].get_base_url()
+        assert response[i].get_text_class_name() == expected[i].get_text_class_name()
+        assert response[i].get_children_tag() == expected[i].get_children_tag()

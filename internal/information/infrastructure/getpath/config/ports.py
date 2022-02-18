@@ -8,7 +8,7 @@ from internal.information.infrastructure.getpath.config.model.path import PathMo
 
 class MapperInterface(metaclass=ABCMeta):
     @abstractmethod
-    def path_model_to_entity(self, path_model: PathModel) -> PathEntity:
+    def path_model_to_entity(self, path_model: [PathModel]) -> []:
         pass
 
     @abstractmethod

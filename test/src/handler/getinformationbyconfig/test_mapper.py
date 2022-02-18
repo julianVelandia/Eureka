@@ -24,9 +24,31 @@ def test_request_to_query(input_a, expected):
 @pytest.mark.parametrize(
     "input_a, expected",
     [
-        (Information("information text"), InformationResponse("information text")),
+        ([Information(
+            "b3cb7919-10c9-4704-bb05-42161060637b",
+            "https://web.icetex.gov.co/es/-/diplomado-competencias-digitales-docencia",
+            "information text 1",
+        ), Information(
+            "b3cb7919-10c9-4704-bb05-42161060637b",
+            "https://web.icetex.gov.co/es/-/diplomado-competencias-digitales-docencia",
+            "information text 2",
+        )],
+         [InformationResponse(
+             "b3cb7919-10c9-4704-bb05-42161060637b",
+             "https://web.icetex.gov.co/es/-/diplomado-competencias-digitales-docencia",
+             "information text 1",
+         ), InformationResponse(
+             "b3cb7919-10c9-4704-bb05-42161060637b",
+             "https://web.icetex.gov.co/es/-/diplomado-competencias-digitales-docencia",
+             "information text 2",
+         )])
     ]
 )
 def test_entity_to_response(input_a, expected):
-    assert mapper.entity_to_response(input_a).information == expected.information
+    response = mapper.entity_to_response(input_a)
+    for i in range(len(response)):
+        assert response[i].section_id == expected[i].section_id
+        assert response[i].link == expected[i].link
+        assert response[i].information == expected[i].information
+
 

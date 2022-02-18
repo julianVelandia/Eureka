@@ -10,7 +10,7 @@ class ProcessPathConfig(ServiceGetPathInterface):
     mapper = Mapper()
     json_mapping_interface = JsonMapping()
 
-    def get(self, query: GetConfig) -> PathEntity:
+    def get(self, query: GetConfig) -> [PathEntity]:
         query_model = self.mapper.query_entity_to_model(query)
         path_model = self.json_mapping_interface.mapping_json_config_to_path(query_model)
         return self.mapper.path_model_to_entity(path_model)

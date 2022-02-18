@@ -7,12 +7,12 @@ from internal.information.core.query.get_config import GetConfig
 
 class GetConfigServiceInterface(metaclass=ABCMeta):
     @abstractmethod
-    def get_path(self, query: GetConfig) -> Path:
+    def get_path(self, query: GetConfig) -> [Path]:
         pass
 
 
 class GetInformationServiceInterface(metaclass=ABCMeta):
     @abstractmethod
-    def get_information(self, path: Path) -> Information:
+    def get_information(self, path: [Path]) -> [Information]:
         pass
 

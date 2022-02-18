@@ -8,5 +8,5 @@ class ServiceGetByConfig(GetConfigServiceInterface):
 
     path_config = ProcessPathConfig()
 
-    def get_path(self, query: GetConfig) -> Path:
+    def get_path(self, query: GetConfig) -> [Path]:
         return self.path_config.get(query)

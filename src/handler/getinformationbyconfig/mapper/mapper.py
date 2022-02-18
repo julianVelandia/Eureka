@@ -12,15 +12,14 @@ class Mapper(MapperInterface):
             request_params.config_name,
         )
 
-    def entity_to_response(self, information: [Information]) -> [InformationResponse]:
-        section_id = information[0].get_uuid()
-        information_string = [str]
+    def entity_to_response(self, information: [Information]) -> []:
+        response = []
+
         for i in information:
-            if i.get_uuid() != section_id:
-                section_id = i.get_uuid()
-                response = InformationResponse()
-
-            information_string.append(i.get_text())
-
-
-        return []
+            response.append(
+                InformationResponse(
+                    i.get_uuid(),
+                    i.get_link(),
+                    i.get_text(),
+                ))
+        return response
