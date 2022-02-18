@@ -1,7 +1,7 @@
 import pytest
 
+from internal.information.core.query.get_config import GetConfig
 from internal.information.infrastructure.getpath.config.model.path import PathModel
-from internal.information.infrastructure.getpath.config.model.query import QueryModel
 from internal.platform.json.mapping import JsonMapping
 
 json_mapping = JsonMapping()
@@ -10,7 +10,7 @@ json_mapping = JsonMapping()
 @pytest.mark.parametrize(
     "input_a, expected",
     [
-        (QueryModel("es", "oportunidades"), [PathModel(
+        (GetConfig("es", "oportunidades"), [PathModel(
                 "b3cb7919-10c9-4704-bb05-42161060637b",
                 "https://web.icetex.gov.co/es/-/diplomado-competencias-digitales-docencia",
                 "div",
@@ -72,7 +72,7 @@ def test_mapping_json_config_to_path(input_a, expected):
     "input_a, expected",
     [
         # TODO en mi pc funciona, pero en otro no
-        (QueryModel("es", "oportunidades"),
+        (GetConfig("es", "oportunidades"),
          'C:\\Users\\57315\\Mio\\Eureka\\internal\\platform\\defaultconfig\\es\\oportunidades.json')
     ]
 )
