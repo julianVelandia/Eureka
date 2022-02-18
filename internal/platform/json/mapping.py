@@ -35,3 +35,6 @@ class JsonMapping:
             base_path += folder + '\\'
 
         return base_path + RELATIVE_PATH + query_model.language + '\\' + query_model.file_name + JSON_FILE
+
+    def validator_json(self):
+        pass

@@ -18,8 +18,8 @@ class Mapper(MapperInterface):
         for i in information:
             response.append(
                 InformationResponse(
-                    i.get_uuid(),
-                    i.get_link(),
-                    i.get_text(),
+                    i.get_uuid(None),
+                    i.get_link(None),
+                    i.get_text(None),
                 ))
         return response
