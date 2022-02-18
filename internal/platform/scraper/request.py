@@ -19,13 +19,17 @@ class Request:
         soup = BeautifulSoup(url.content, PARSER)
 
         class_names_text = self.format_class_names(path.text_class_name)
-        father = soup.find(path.text_tag, {CLASS: class_names_text})
+        father_text = soup.find(path.text_tag, {CLASS: class_names_text}).text
 
-        if father.text == '':
-            children = father.findChildren(path.children_tag, recursive=False)
-            information_response.text = children.text
+        if father_text == "":
+            children_text = soup.find(
+                path.text_tag,
+                {},
+            ).findChildren(path.children_tag, recursive=False).text
+
+            information_response.text = children_text
         else:
-            information_response.text = father.text
+            information_response.text = father_text
 
         return information_response
 

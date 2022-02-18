@@ -21,6 +21,7 @@ request = Request()
             "\nDiplomado en Competencias Digitales para la Docencia\n",
             "https://web.icetex.gov.co/es/-/diplomado-competencias-digitales-docencia",
         )),
+
         (PathModel(
             "b3cb7919-10c9-4704-bb05-42161060637b",
             "https://fastapi.tiangolo.com/",
