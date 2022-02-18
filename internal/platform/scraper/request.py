@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 import re
 
-from internal.information.infrastructure.getpath.config.model.path import PathModel
+from internal.information.core.entity.path import Path as PathEntity
 from internal.information.infrastructure.request.model.information import InformationModel
 
 CLASS = "class"
@@ -10,28 +10,33 @@ PARSER = "html.parser"
 
 
 class Request:
-    def single_request(self, path: PathModel) -> InformationModel:
+    def single_request(self, path: PathEntity) -> InformationModel:
 
         # TODO try and catch
-        information_response = InformationModel(path.section_id, "", path.base_url)
 
-        url = requests.get(path.base_url)
+        url = requests.get(path.get_base_url())
         soup = BeautifulSoup(url.content, PARSER)
 
-        class_names_text = self.format_class_names(path.text_class_name)
-        father = soup.find(path.text_tag, {CLASS: class_names_text})
+        class_names_text = self.format_class_names(path.get_text_class_name())
+        father = soup.find(path.get_text_tag, {CLASS: class_names_text})
 
-        if path.children_tag != "":
-            children = father.findChildren(path.children_tag, recursive=False)
+        if path.get_children_tag != "":
+            children = father.findChildren(path.get_children_tag, recursive=False)
             children_text = ''
             for c in children:
                 children_text += c.text
-            information_response.text = children_text
+            return InformationModel(
+                path.get_section_id(),
+                children_text,
+                path.get_base_url(),
+            )
         else:
-            pass
-            #information_response.text = father.text
+            return InformationModel(
+                path.get_section_id(),
+                soup.find(path.get_text_tag, {CLASS: class_names_text}).text,
+                path.get_base_url(),
+            )
 
-        return information_response
 
     def format_class_names(self, names: [str]):
         class_names = ""

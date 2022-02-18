@@ -1,3 +1,5 @@
+from typing import List
+
 from internal.information.core.entity.path import Path
 from internal.information.core.query.get_config import GetConfig
 from internal.information.core.usecase.ports import GetConfigServiceInterface
@@ -8,5 +10,5 @@ class ServiceGetByConfig(GetConfigServiceInterface):
 
     path_config = ProcessPathConfig()
 
-    def get_path(self, query: GetConfig) -> [Path]:
+    def get_path(self, query: GetConfig) -> List[Path]:
         return self.path_config.get(query)

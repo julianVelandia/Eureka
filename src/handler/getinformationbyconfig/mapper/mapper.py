@@ -1,3 +1,5 @@
+from typing import List
+
 from internal.information.core.entity.information import Information
 from internal.information.core.query.get_config import GetConfig
 from src.handler.getinformationbyconfig.contract.request import Params
@@ -12,14 +14,16 @@ class Mapper(MapperInterface):
             request_params.config_name,
         )
 
-    def entity_to_response(self, information: [Information]) -> []:
+    def entity_to_response(self, information: List[Information]) -> List[InformationResponse]:
+
         response = []
 
         for i in information:
             response.append(
                 InformationResponse(
-                    i.get_uuid(None),
-                    i.get_link(None),
-                    i.get_text(None),
+                    i.get_uuid(),
+                    i.get_link(),
+                    i.get_text(),
                 ))
+
         return response
