@@ -1,7 +1,7 @@
 import pytest
 
+from internal.information.core.entity.path import Path
 from internal.information.infrastructure.request.model.information import InformationModel
-from internal.information.infrastructure.request.model.path import PathModel
 from internal.platform.scraper.request import Request
 
 request = Request()
@@ -10,7 +10,7 @@ request = Request()
 @pytest.mark.parametrize(
     "input_a, expected",
     [
-        (PathModel(
+        (Path(
                 "b3cb7919-10c9-4704-bb05-42161060637b",
                 "https://web.icetex.gov.co/es/-/diplomado-competencias-digitales-docencia",
                 "div",
@@ -18,11 +18,11 @@ request = Request()
                 "h1",
         ), InformationModel(
             "b3cb7919-10c9-4704-bb05-42161060637b",
-            "\nDiplomado en Competencias Digitales para la Docencia\n",
+            "Diplomado en Competencias Digitales para la Docencia",
             "https://web.icetex.gov.co/es/-/diplomado-competencias-digitales-docencia",
         )),
 
-        (PathModel(
+        (Path(
             "b3cb7919-10c9-4704-bb05-42161060637b",
             "https://fastapi.tiangolo.com/",
             "span",
