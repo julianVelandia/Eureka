@@ -37,7 +37,7 @@ pip install -r requirements.dev.txt
 You can run all the tests with:
 
 ```bash
-make test
+make tests
 ```
 
 Alternatively, you can run `pytest` yourself.
