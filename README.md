@@ -62,7 +62,7 @@ The project runs like any FastApi application and by default the configuration e
 uvicorn main:app --reload
 ```
 
-##Features
+## Features
 - [ ] RenderEngine: Render a web page from its url to select the texts to scrape and save them in a Json file
 - [ ] Templates to visualize the scraped information
 - [ ] export data in json and csv files
