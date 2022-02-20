@@ -59,7 +59,6 @@ json_mapping = JsonMapping()
 def test_mapping_json_config_to_path(input_a, expected):
     # TODO as list comprehension
     path_model = json_mapping.mapping_json_config_to_path(input_a)
-
     for i in range(len(path_model)):
         assert path_model[i].section_id == expected[i].section_id
         assert path_model[i].base_url == expected[i].base_url

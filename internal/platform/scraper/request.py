@@ -18,10 +18,10 @@ class Request:
         soup = BeautifulSoup(url.content, PARSER)
 
         class_names_text = self.format_class_names(path.text_class_name)
-        father = soup.find(path.get_text_tag, {CLASS: class_names_text})
+        father = soup.find(path.text_tag, {CLASS: class_names_text})
 
-        if path.get_children_tag != "":
-            children = father.findChildren(path.get_children_tag, recursive=False)
+        if path.children_tag != "":
+            children = father.findChildren(path.children_tag, recursive=False)
             children_text = ''
             for c in children:
                 children_text += c.text
@@ -33,7 +33,7 @@ class Request:
         else:
             return InformationModel(
                 path.section_id,
-                soup.find(path.get_text_tag, {CLASS: class_names_text}).text,
+                soup.find(path.text_tag, {CLASS: class_names_text}).text,
                 path.base_url,
             )
 
