@@ -33,8 +33,7 @@ class Request:
         else:
             return InformationModel(
                 path.section_id,
-                "",
-                #soup.find(path.get_text_tag, {CLASS: class_names_text}).text,
+                soup.find(path.get_text_tag, {CLASS: class_names_text}).text,
                 path.base_url,
             )
 
