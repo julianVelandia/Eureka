@@ -11,5 +11,3 @@ class Mapper(MapperInterface):
             information_model.text,
             information_model.link
         )
-
-

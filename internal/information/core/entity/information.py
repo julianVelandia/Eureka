@@ -6,5 +6,3 @@ class Information:
     uuid: str
     link: str
     text: str
-
-

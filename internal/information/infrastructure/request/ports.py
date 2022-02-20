@@ -8,5 +8,3 @@ class MapperInterface(metaclass=ABCMeta):
     @abstractmethod
     def information_model_to_entity(self, information_model: InformationModel) -> InformationEntity:
         pass
-
-

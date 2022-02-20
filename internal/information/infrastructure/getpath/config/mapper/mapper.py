@@ -20,4 +20,3 @@ class Mapper(MapperInterface):
                 ))
 
         return path_entity
-

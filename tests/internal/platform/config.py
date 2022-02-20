@@ -5,6 +5,7 @@ from internal.platform.constant.scopes import Scope
 s1 = Scope()
 s2 = Scope()
 
+
 @pytest.mark.parametrize(
     "input_a, input_b",
     [
@@ -13,4 +14,3 @@ s2 = Scope()
 )
 def test_singleton_scope(input_a, input_b):
     assert input_a == input_b
-
