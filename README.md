@@ -45,14 +45,6 @@ Alternatively, you can run `pytest` yourself.
 pytest
 ```
 
-### Format the code
-
-Execute the following command to apply `isort` and `black` formatting:
-
-```bash
-make format
-```
-
 ### Run 
 
 The project runs like any FastApi application and by default the configuration endpoint works.
