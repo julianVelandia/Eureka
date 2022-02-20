@@ -1,7 +1,8 @@
 import json
 import os
+from typing import List
 
-from internal.information.infrastructure.getpath.config.model.query import QueryModel
+from internal.information.core.query.get_config import GetConfig as QueryModel
 from internal.information.infrastructure.getpath.config.model.path import PathModel
 
 JSON_FILE = '.json'
@@ -9,17 +10,21 @@ RELATIVE_PATH = 'Eureka\\internal\\platform\\defaultconfig\\'
 
 
 class JsonMapping:
-    def mapping_json_config_to_path(self, query_model: QueryModel) -> PathModel:
+    def mapping_json_config_to_path(self, query_model: QueryModel) -> List[PathModel]:
         # TODO try cath finaly
         # TODO def armar url
 
         with open(self.build_platform_file_path(query_model), 'r') as f:
             data = json.load(f)
-
-            result = PathModel("", "", [""])
-            result.__dict__ = data
-
             f.close()
+
+        result = []
+
+        for single_path in data:
+            single_result = PathModel()
+            single_result.__dict__ = single_path
+            result.append(single_result)
+
         return result
 
     def build_platform_file_path(self, query_model: QueryModel) -> str:
@@ -30,4 +35,7 @@ class JsonMapping:
                 break
             base_path += folder + '\\'
 
-        return base_path + RELATIVE_PATH + query_model.language + '\\' + query_model.file_name + JSON_FILE
+        return base_path + RELATIVE_PATH + query_model.get_language() + '\\' + query_model.get_file_name() + JSON_FILE
+
+    def validator_json(self):
+        pass

@@ -1,23 +1,73 @@
 # Eureka
 
-Eureka is a Rest-API framework scraper based on [FastAPI](https://fastapi.tiangolo.com/) for cleaning and organizing 
-data, designed for the [Eureka by Turing project](https://t.me/eureka_latam) of the National University of Colombia
+Eureka is a Rest-API project for Web Scraping, data cleaning and organization, based on 
+[FastAPI](https://fastapi.tiangolo.com/). Designed for the [Eureka by Turing project](https://t.me/eureka_latam) 
+of the National University of Colombia
 
-## Installation
+Disclaimer: this is a work in progress project, stay tuned for updates (*).
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install Eureka.
+## Installation and Usage
+
+### Setup environment
+
+You should create a virtual environment and activate it:
 
 ```bash
-pip install eureka
+python -m venv venv/
 ```
 
-## Usage
-
-```python
-import eureka
-
-#WIP
+```bash
+source venv/bin/activate
 ```
+
+Clone repository
+
+```bash
+git clone https://github.com/julianVelandia/Eureka.git
+```
+
+And then install the development dependencies:
+
+```bash
+pip install -r requirements.dev.txt
+```
+
+### Run unit tests
+
+You can run all the tests with:
+
+```bash
+make tests
+```
+
+Alternatively, you can run `pytest` yourself.
+
+```bash
+pytest
+```
+
+### Format the code
+
+Execute the following command to apply `isort` and `black` formatting:
+
+```bash
+make format
+```
+
+### Run 
+
+The project runs like any FastApi application and by default the configuration endpoint works.
+
+```bash
+uvicorn main:app --reload
+```
+
+## Features
+- [ ] RenderEngine: Render a web page from its url to select the texts to scrape and save them in a Json file
+- [ ] Templates to visualize the scraped information
+- [ ] export data in json and csv files
+- [x] Make automated requests from a Json configuration file
+- [x] Unpack Json configuration files
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.

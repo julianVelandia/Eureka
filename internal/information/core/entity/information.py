@@ -1,8 +1,10 @@
+from dataclasses import dataclass
+
+
+@dataclass(frozen=True)
 class Information:
-    __text: str
+    uuid: str
+    link: str
+    text: str
 
-    def __init__(self, text: str):
-        self.__text = text
 
-    def get_text(self) -> str:
-        return self.__text
