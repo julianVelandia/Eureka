@@ -1,9 +1,6 @@
 # Eureka
-
-Eureka is a Rest-API project for Web Scraping, data cleaning and organization, based on 
-[FastAPI](https://fastapi.tiangolo.com/). Designed for the [Eureka by Turing project](https://t.me/eureka_latam) 
-of the National University of Colombia
-
+Eureka is a Rest-API project for Web Scraping, data cleaning and organization, based on FastAPI and following a
+hexagonal architecture. Designed for the Eureka by Turing project of the National University of Colombia
 Disclaimer: this is a work in progress project, stay tuned for updates (*).
 
 ## Installation and Usage
