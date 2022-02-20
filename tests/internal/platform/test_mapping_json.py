@@ -53,7 +53,7 @@ json_mapping = JsonMapping()
                 "",
         )]
          )
-        # TODO test cuando falla con el try cath
+        # TODO tests cuando falla con el try cath
     ]
 )
 def test_mapping_json_config_to_path(input_a, expected):
