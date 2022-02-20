@@ -16,4 +16,3 @@ mapper = Mapper()
 def test_request_to_query(input_a, expected):
     assert mapper.request_to_query(input_a).get_language() == expected.get_language()
     assert mapper.request_to_query(input_a).get_file_name() == expected.get_file_name()
-

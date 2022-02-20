@@ -4,7 +4,6 @@ from typing import List
 from internal.information.core.entity.information import Information
 from internal.information.core.query.get_config import GetConfig
 from src.handler.getinformationbyconfig.contract.request import Params
-from src.handler.getinformationbyconfig.contract.response import InformationResponse
 
 
 class UseCaseInterface(metaclass=ABCMeta):

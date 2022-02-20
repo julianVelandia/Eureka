@@ -18,7 +18,6 @@ class PathModel:
         self.text_class_name = text_class_name
         self.children_tag = children_tag
 
-
     @classmethod
     def new_full_path(cls,
                       section_id,

@@ -16,4 +16,3 @@ class GetInformationServiceInterface(metaclass=ABCMeta):
     @abstractmethod
     def get_information(self, path: List[Path]) -> List[Information]:
         pass
-

@@ -31,5 +31,4 @@ class Scope(metaclass=SingletonMeta):
         elif new_scope == self.__TEST_SCOPE:
             os.getenv(self.__TEST_SCOPE)
         else:
-            #TODO manage error
             pass

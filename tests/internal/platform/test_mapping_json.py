@@ -10,50 +10,49 @@ json_mapping = JsonMapping()
 @pytest.mark.parametrize(
     "input_a, expected",
     [
-        (GetConfig("es", "oportunidades"), [PathModel(
+        (GetConfig("es", "oportunidades"), [
+            PathModel(
                 "b3cb7919-10c9-4704-bb05-42161060637b",
                 "https://web.icetex.gov.co/es/-/diplomado-competencias-digitales-docencia",
                 "div",
                 ["col-12", "pb-3"],
                 "h1",
-        ),
+            ),
             PathModel(
                 "b3cb7919-10c9-4704-bb05-42161060637b",
                 "https://web.icetex.gov.co/es/-/diplomado-competencias-digitales-docencia",
                 "div",
                 ["descrp_conv"],
                 "p",
-        ),
+            ),
             PathModel(
                 "76e8fb84-42b3-4900-a5a8-3a8645385092",
                 "https://web.icetex.gov.co/es/-/practical-sustainable-technology",
                 "div",
                 ["col-12", "pb-3"],
                 "h1",
-        ),
+            ),
             PathModel(
                 "76e8fb84-42b3-4900-a5a8-3a8645385092",
                 "https://web.icetex.gov.co/es/-/practical-sustainable-technology",
                 "div",
                 ["descrp_conv"],
-                "p",
-        ),
+                "p",),
             PathModel(
                 "dfd0f819-3b2e-4b35-b3a0-aa0bbb00d1c2",
-                "https://app.becas-santander.com/es/program/becas-santander-idiomas-online-english-courses-2022-british-council",
+                "https://app.becas-santander.com/es/program/"
+                "becas-santander-idiomas-online-english-courses-2022-british-council",
                 "h1",
                 ["text-title", "font-weight-bold"],
-                "",
-        ),
+                "", ),
             PathModel(
                 "dfd0f819-3b2e-4b35-b3a0-aa0bbb00d1c2",
-                "https://app.becas-santander.com/es/program/becas-santander-idiomas-online-english-courses-2022-british-council",
+                "https://app.becas-santander.com/es/program/"
+                "becas-santander-idiomas-online-english-courses-2022-british-council",
                 "p",
                 ["pt-4", "ng-star-inserted"],
                 "",
-        )]
-         )
-        # TODO tests cuando falla con el try cath
+            )])
     ]
 )
 def test_mapping_json_config_to_path(input_a, expected):

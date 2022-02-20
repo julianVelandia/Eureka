@@ -9,4 +9,3 @@ class MapperInterface(metaclass=ABCMeta):
     @abstractmethod
     def path_model_to_entity(self, path_model: List[PathModel]) -> List[Path]:
         pass
-
