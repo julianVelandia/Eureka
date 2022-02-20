@@ -19,7 +19,7 @@ class Scope(metaclass=SingletonMeta):
     def __init__(self):
         self.__PROD_SCOPE = "prod"
         self.__DEV_SCOPE = "dev"
-        self.__TEST_SCOPE = "test"
+        self.__TEST_SCOPE = "tests"
 
         os.getenv(self.__DEV_SCOPE, default=self.__DEV_SCOPE)
 
