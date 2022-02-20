@@ -11,7 +11,7 @@ format: isort-src isort-docs isort-examples
 	black .
 
 lint:
-	flake8 ./Eureka ./tests
+	flake8 ./internal ./src ./tests
 
 test:
 	pytest --cov=Eureka/ --cov-report=term-missing --cov-fail-under=100
