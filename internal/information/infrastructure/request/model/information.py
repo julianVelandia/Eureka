@@ -1,9 +1,10 @@
-class InformationModel:
+from internal.information.core.entity.information import Information
+
+
+class InformationModel(Information):
     uuid: str
     text: str
     link: str
 
-    def __init__(self, uuid: str, text: str, link: str):
-        self.text = text
-        self.link = link
-        self.uuid = uuid
+    def __init__(self, uuid, text, link):
+        Information.__init__(self, uuid, text, link)

@@ -1,5 +1,7 @@
 lint:
-	flake8 ./internal ./src ./tests
+	@echo "Running linter flake8" & flake8 ./internal ./src ./tests
 
 test:
-	pytest ./tests
+	@echo "Running test" pytest ./tests
+
+all: lint test

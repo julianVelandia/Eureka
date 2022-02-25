@@ -1,4 +1,7 @@
-class PathModel:
+from internal.information.core.entity.path import Path
+
+
+class PathModel(Path):
     section_id: str
     base_url: str
     text_tag: str
@@ -12,11 +15,13 @@ class PathModel:
                  text_class_name,
                  children_tag,
                  ):
-        self.section_id = section_id
-        self.base_url = base_url
-        self.text_tag = text_tag
-        self.text_class_name = text_class_name
-        self.children_tag = children_tag
+        Path.__init__(self,
+                      section_id,
+                      base_url,
+                      text_tag,
+                      text_class_name,
+                      children_tag,
+                      )
 
     @classmethod
     def new_full_path(cls,
