@@ -1,9 +1,9 @@
 class InformationModel:
     uuid: str
-    text: str
     link: str
+    text: str
 
-    def __init__(self, uuid: str, text: str, link: str):
-        self.text = text
-        self.link = link
+    def __init__(self, uuid: str, link: str, text: str):
         self.uuid = uuid
+        self.link = link
+        self.text = text

@@ -29,16 +29,9 @@
   },
   {
     "section_id": "dfd0f819-3b2e-4b35-b3a0-aa0bbb00d1c2",
-    "base_url" : "https://app.becas-santander.com/es/program/becas-santander-idiomas-online-english-courses-2022-british-council",
-    "text_tag" : "h1",
-    "text_class_name" : ["text-title", "font-weight-bold"],
-    "children_tag": ""
-  },
-  {
-    "section_id": "dfd0f819-3b2e-4b35-b3a0-aa0bbb00d1c2",
-    "base_url" : "https://app.becas-santander.com/es/program/becas-santander-idiomas-online-english-courses-2022-british-council",
-    "text_tag" : "p",
-    "text_class_name" : ["pt-4", "ng-star-inserted"],
+    "base_url": "https://fastapi.tiangolo.com/",
+    "text_tag": "span",
+    "text_class_name": ["md-ellipsis"],
     "children_tag": ""
   }
 ]
