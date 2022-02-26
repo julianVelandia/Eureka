@@ -39,8 +39,8 @@ service_get_by_config = ServiceGetByConfig()
           base_url="https://fastapi.tiangolo.com/",
           text_tag="span",
           text_class_name=["md-ellipsis"],
-          children_tag=""),
-      ])]
+          children_tag="",
+      ), ])]
 )
 def test_get(input_a, expected):
     assert service_get_by_config.get_path(input_a) == expected

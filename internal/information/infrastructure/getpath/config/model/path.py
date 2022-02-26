@@ -2,11 +2,6 @@ from internal.information.core.entity.path import Path
 
 
 class PathModel(Path):
-    section_id: str
-    base_url: str
-    text_tag: str
-    text_class_name: [str]
-    children_tag: str
 
     def __init__(self,
                  section_id,
