@@ -1,5 +1,7 @@
 lint:
-	flake8 ./internal ./src ./tests
+	@echo "Running linter flake8" & flake8 ./internal ./src ./tests
 
 test:
-	pytest --cov=Eureka ./tests
+	@echo "Running test" & pytest --cov ./tests
+
+all: lint test
