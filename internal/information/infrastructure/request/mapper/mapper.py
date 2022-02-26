@@ -8,6 +8,6 @@ class Mapper(MapperInterface):
     def information_model_to_entity(self, information_model: InformationModel) -> InformationEntity:
         return InformationEntity(
             information_model.uuid,
+            information_model.link,
             information_model.text,
-            information_model.link
         )

@@ -39,19 +39,11 @@ json_mapping = JsonMapping()
                 ["descrp_conv"],
                 "p",),
             PathModel(
-                "dfd0f819-3b2e-4b35-b3a0-aa0bbb00d1c2",
-                "https://app.becas-santander.com/es/program/"
-                "becas-santander-idiomas-online-english-courses-2022-british-council",
-                "h1",
-                ["text-title", "font-weight-bold"],
-                "", ),
-            PathModel(
-                "dfd0f819-3b2e-4b35-b3a0-aa0bbb00d1c2",
-                "https://app.becas-santander.com/es/program/"
-                "becas-santander-idiomas-online-english-courses-2022-british-council",
-                "p",
-                ["pt-4", "ng-star-inserted"],
-                "",
+                'dfd0f819-3b2e-4b35-b3a0-aa0bbb00d1c2',
+                'https://fastapi.tiangolo.com/',
+                'span',
+                ["md-ellipsis"],
+                '',
             )])
     ]
 )

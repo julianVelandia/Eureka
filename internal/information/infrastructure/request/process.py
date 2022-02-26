@@ -2,7 +2,6 @@ from internal.information.core.entity.path import Path as PathEntity
 from internal.information.core.entity.information import Information as InformationEntity
 from internal.information.core.service.request.ports import RequestServiceInterface
 from internal.information.infrastructure.request.mapper.mapper import Mapper
-
 from internal.platform.scraper.request import Request
 
 
