@@ -1,4 +1,10 @@
 # Eureka
+
+
+[![Coverage Status](https://coveralls.io/repos/github/julianVelandia/Eureka/badge.svg?branch=master)](https://coveralls.io/github/julianVelandia/Eureka?branch=master)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
 Eureka is a Rest-API project for Web Scraping, data cleaning and organization, based on FastAPI and following a
 hexagonal architecture. Designed for the Eureka by Turing project of the National University of Colombia
 

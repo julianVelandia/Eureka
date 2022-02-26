@@ -27,14 +27,14 @@ class Request:
                 children_text += c.text
             return InformationModel(
                 path.section_id,
-                children_text,
                 path.base_url,
+                children_text,
             )
         else:
             return InformationModel(
                 path.section_id,
-                soup.find(path.text_tag, {CLASS: class_names_text}).text,
                 path.base_url,
+                soup.find(path.text_tag, {CLASS: class_names_text}).text,
             )
 
     def format_class_names(self, names: [str]):
