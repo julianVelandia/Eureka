@@ -1,7 +1,6 @@
 import pytest
 
 from internal.information.core.entity.information import Information
-from internal.information.core.entity.path import Path
 from internal.information.core.query.get_config import GetConfig
 from internal.information.core.usecase.get_by_config import UseCaseGetByConfig
 
